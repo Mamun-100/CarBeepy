@@ -1,21 +1,40 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native'
+import {NavigationContainer } from "@react-navigation/native";
+import {createStackNavigator } from "@react-navigation/stack";
 
-export default function App() {
+import BoardingPage1 from './boarding/BoardingPage1';
+import BoardingPage2 from './boarding/BoardingPage2';
+import BoardingPage3 from './boarding/BoardingPage3';
+import BoardingPage4 from './boarding/BoardingPage4';
+import SportCar from './boarding/SportCar';
+import Motorhome from './boarding/Motorhome'
+import Cards from './boarding/Cards';
+import CarDetails from './boarding/CarDetails'
+
+const Stack = createStackNavigator();
+
+export default function App({navigation}) {
+
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+   
+
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="BoardingPage1" screenOptions={{headerShown: false}}>
+        <Stack.Screen name="BoardingPage1" component={BoardingPage1} />
+        <Stack.Screen name="BoardingPage2" component={BoardingPage2} />
+        <Stack.Screen name="BoardingPage3" component={BoardingPage3} />
+        <Stack.Screen name="BoardingPage4" component={BoardingPage4} />
+        <Stack.Screen name="Cards" component={Cards} />
+        <Stack.Screen name="CarDetails" component={CarDetails}/>
+
+       {/* <Stack.Screen name="CarCards" component={CarCards} /> 
+        <Stack.Screen name="SportCar" component={SportCar} />
+        <Stack.Screen name="Motorhome" component={Motorhome} />  */}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
