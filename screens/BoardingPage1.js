@@ -3,8 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { Image } from "react-native-elements";
 import { ActivityIndicator } from "react-native";
 
-
-const BoardingPage1 = ({navigation}) => {
+const BoardingPage1 = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.beepyView}>
@@ -18,7 +17,7 @@ const BoardingPage1 = ({navigation}) => {
                     PlaceholderContent={<ActivityIndicator />}
                 />
             </View>
-            
+
             <View style={styles.lineImg}>
                 <Image
                     source={require("../assets/img/b_page/line1.png")}
@@ -45,14 +44,16 @@ const BoardingPage1 = ({navigation}) => {
                 </Text>
             </View>
 
-            <View style={{
-                width: "90%",
-                justifyContent: "center",
-                alignSelf: "center",
-                marginTop: "8%",
-            }}>
+            <View
+                style={{
+                    width: "90%",
+                    justifyContent: "center",
+                    alignSelf: "center",
+                    marginTop: "8%",
+                }}
+            >
                 <TouchableOpacity
-                    onPress={() => navigation.navigate('BoardingPage2')}
+                    onPress={() => navigation.navigate("BoardingPage2")}
                     style={{
                         width: "100%",
                         height: 55,
@@ -75,9 +76,7 @@ const BoardingPage1 = ({navigation}) => {
                 />
             </View>
 
-                                        {/* Navigation here */}
-            
-
+            {/* Navigation here */}
         </View>
     );
 };
@@ -86,7 +85,7 @@ export default BoardingPage1;
 
 const styles = StyleSheet.create({
     container: {
-    marginTop: '17%'
+        marginTop: "17%",
     },
     beepyView: {
         display: "flex",
